@@ -1,4 +1,6 @@
-import {appFontSizes, height} from "../../common/Constanst";
+import {Dimensions} from 'react-native';
+
+const {height} = Dimensions.get('window');
 
 // const
 export default {
@@ -16,7 +18,7 @@ export default {
     txtScanHelp: {
         alignSelf: 'flex-start',
         marginLeft: 5,
-        fontSize: appFontSizes.sz14,
+        // fontSize: appFontSizes.sz14,
         color: 'white',
         textAlign: 'center',
         marginBottom: 3,
@@ -62,7 +64,7 @@ export default {
     txtFlashLight: {
         color: 'white',
         textAlign: 'center',
-        fontSize: appFontSizes.sz12,
+        // fontSize: appFontSizes.sz12,
         marginBottom: 25,
         marginTop: 3,
     },
@@ -84,7 +86,7 @@ export default {
     txtError: {
         color: '#d0021b',
         textAlign: 'center',
-        fontSize: appFontSizes.sz14
+        // fontSize: appFontSizes.sz14
     },
     btnInputQR: {
         backgroundColor: 'transparent',
@@ -102,12 +104,12 @@ export default {
         color: 'white',
         fontFamily: 'HelveticaNeue-Medium',
         textAlign: 'center',
-        fontSize: appFontSizes.sz18
+        // fontSize: appFontSizes.sz18
     },
     txtScanQR: {
         color: 'white',
         fontFamily: 'HelveticaNeue-Bold',
         textAlign: 'center',
-        fontSize: appFontSizes.sz18,
+        // fontSize: appFontSizes.sz18,
     },
 }

@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
 import {View, TouchableOpacity, Image, Text, Vibration} from 'react-native';
-import {appFontSizes, height} from "../../common/Constanst";
 import {RNCamera} from "react-native-camera";
 import Sound from 'react-native-sound';
-import styles from './QRCodeScannerStyles';
-import BasePopup from "../../common/components/BasePopup";
+import styles from './styles';
 import Icon from 'react-native-vector-icons/Ionicons';
-import StatusBar from "../../common/components/StatusBar";
 
 const resource = {
     scanQR: require('./resource/scan_qr.png'),
@@ -18,7 +15,7 @@ type Props = {
     timeDelay: number
 }
 
-export default class QRCodeScanner extends BasePopup<Props> {
+export default class QRCodeScanner extends Component<Props> {
     constructor(props) {
         super(props);
         Sound.setCategory('Playback', true);
@@ -70,11 +67,10 @@ export default class QRCodeScanner extends BasePopup<Props> {
         clearTimeout(this.timeDelay);
     }
 
-    _renderComp() {
+    render() {
         // return <View style={{backgroundColor: 'white', flex: 1}}/>
         return (
             <View style={styles.container}>
-                <StatusBar/>
                 <RNCamera
                     ref={'camera'}
                     barCodeTypes={[RNCamera.Constants.BarCodeType.qr]}
@@ -153,9 +149,5 @@ export default class QRCodeScanner extends BasePopup<Props> {
 
             </View>
         )
-    }
-
-    showQRInputView = () => {
-
     }
 }
