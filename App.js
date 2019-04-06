@@ -40,7 +40,7 @@ export default class App extends Component<Props> {
                     }}
                 >
                     <QRCodeScanner ref={c => this._scanner = c} onClose={() => this.setState({modalVisible: false})}
-                                   onScanned={(e) => this.setState({code: e.data})}/>
+                                   onScanned={(e) => this.setState({code: e.data, modalVisible: false})}/>
                 </Modal>
             </View>
         )
